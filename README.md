@@ -1,1 +1,1 @@
-# gene-signal-processing
+# gene-to-signal
