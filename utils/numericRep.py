@@ -17,13 +17,13 @@ class toNumeric:
         self.numDict = {'T':'0',  'C':'1',  'A':'2',  'G':'3'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def Int_1(self):
         self.numDict = {'T':'1',  'C':'2',  'A':'3',  'G':'4'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def Real(self):
         self.numDict = {'T':'-1.5',  'C':'0.5',  'A':'1.5',  'G':'-0.5'}
@@ -35,7 +35,7 @@ class toNumeric:
         self.numDict = {'T':'6',  'C':'58',  'A':'70',  'G':'78'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def EIIP(self):
         self.numDict = {'T':'0.1335',  'C':'0.1340',  'A':'0.1260',  'G':'0.0806'}
@@ -47,37 +47,37 @@ class toNumeric:
         self.numDict = {'T':'1',  'C':'1',  'A':'-1',  'G':'-1'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def AT_CG(self):
         self.numDict = {'T':'1',  'C':'-1',  'A':'1',  'G':'-1'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def JustA(self):
         self.numDict = {'T':'0',  'C':'0',  'A':'1',  'G':'0'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def JustC(self):
         self.numDict = {'T':'0',  'C':'1',  'A':'0',  'G':'0'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def JustG(self):
         self.numDict = {'T':'0',  'C':'0',  'A':'0',  'G':'1'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def JustT(self):
         self.numDict = {'T':'1',  'C':'0',  'A':'0',  'G':'0'}
 
         self.replacer()
-        return self.seq.astype(int)
+        return self.seq.astype(float)
 
     def Codons(self):
 
