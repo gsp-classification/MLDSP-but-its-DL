@@ -11,9 +11,12 @@ classes = os.listdir('../../data/external/Vertebrates')
 # *Initialising the dataset list
 dataset = []
 
+print("\nBeginning extraction from genomic sequences in .txt format present in gene-to-signal/data/external/Vertebrates.")
+print("---------------------------------------------------------------------------------------------------------------\n")
 # *Iterating over the class folders
 for vert_class in classes:
-    
+    print("Extracting from class of "+vert_class+".")
+
     # *Iterating over genome files in each class
     for genome in glob.iglob('../../data/external/Vertebrates/'+vert_class+"/*.txt"):
 
@@ -39,4 +42,6 @@ with open('../../data/interim/dataset.csv', 'w') as csvfile:
     writer.writeheader()
     writer.writerows(dataset)
 
+print("\n---------------------------------------------------------------------------------------------------------------")
+print("Dataset with Class, ID and gene sequences (first 5000 bases) created at gene-to-signal/data/interim/dataset.csv.\n")
 # ?Can this be done better? Is a csv necessary or can it just be a folder full of the dataset? 
