@@ -1,30 +1,42 @@
-# -*- coding: utf-8 -*-
-import click
-import logging
-from pathlib import Path
-from dotenv import find_dotenv, load_dotenv
 
+# !Script to make a csv dataset to feed into the spectrogram from the ML-DSP dataset from DOI: <https://doi.org/10.1186/s12864-019-5571-y>
+# *Import packages
+import glob
+import os
+import csv
 
-@click.command()
-@click.argument('input_filepath', type=click.Path(exists=True))
-@click.argument('output_filepath', type=click.Path())
-def main(input_filepath, output_filepath):
-    """ Runs data processing scripts to turn raw data from (../raw) into
-        cleaned data ready to be analyzed (saved in ../processed).
-    """
-    logger = logging.getLogger(__name__)
-    logger.info('making final data set from raw data')
+# *Making a list of the folders
+classes = os.listdir('../../data/external/Vertebrates')
 
+# *Initialising the dataset list
+dataset = []
 
-if __name__ == '__main__':
-    log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(level=logging.INFO, format=log_fmt)
+# *Iterating over the class folders
+for vert_class in classes:
+    
+    # *Iterating over genome files in each class
+    for genome in glob.iglob('../../data/external/Vertebrates/'+vert_class+"/*.txt"):
 
-    # not used in this stub but often useful for finding various files
-    project_dir = Path(__file__).resolve().parents[2]
+        # *Reading the genome
+        with open(genome) as f:
+            seq = f.read()
+        
+        # *Sectioning the first 5000 nucleotides of the genome because my laptop is dying
+        geneseq = seq[13:5013]
 
-    # find .env automagically by walking up directories until it's found, then
-    # load up the .env entries as environment variables
-    load_dotenv(find_dotenv())
+        # *Spliting the path for the ID
+        id = genome.split('/')[-1][:-4]
 
-    main()
+        # *Making a row of the csv
+        row = {'Class': vert_class, 'ID': id, 'Gene Sequence': geneseq}
+
+        # *Appending to the final dataset
+        dataset.append(row)
+
+# *Creating the csv in the 'interim' folder under 'data'
+with open('../../data/interim/dataset.csv', 'w') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=dataset[0].keys())
+    writer.writeheader()
+    writer.writerows(dataset)
+
+# ?Can this be done better? Is a csv necessary or can it just be a folder full of the dataset? 
