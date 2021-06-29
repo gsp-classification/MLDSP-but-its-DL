@@ -56,10 +56,10 @@ def main(path):
         print("---------------------------------------------------------------------------------------------------------------")
         
         # *Removes the directories if made previously.
-        if os.path.isdir('../../data/interim/Vertebrates'):
-            shutil.rmtree('../../data/interim/Vertebrates')
-        if os.path.isdir('../../data/processed/Vertebrates'):
-            shutil.rmtree('../../data/processed/Vertebrates')
+        if os.path.isdir('../../data/interim/spectrograms'):
+            shutil.rmtree('../../data/interim/spectrograms')
+        if os.path.isdir('../../data/processed/spectrograms'):
+            shutil.rmtree('../../data/processed/spectrograms')
         #pool = multiprocessing.Pool()
         #params =[]
         i = True
