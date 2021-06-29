@@ -10,8 +10,8 @@ import pandas as pd
 from scipy import signal as signal
 import matplotlib.pyplot as plt
 from PIL import Image
-import multiprocessing
-import concurrent.futures
+#import multiprocessing
+#import concurrent.futures
 
 # *Function to change the input from the csv dataset into numpy array. Takes input string and outputs nparray.
 def str_to_nparray(sig):
@@ -61,7 +61,7 @@ def main(path):
         if os.path.isdir('../../data/processed/Vertebrates'):
             shutil.rmtree('../../data/processed/Vertebrates')
         #pool = multiprocessing.Pool()
-        params =[]
+        #params =[]
         i = True
         num = 1
         # *Looping over each genome in DNASignal.csv.
@@ -71,23 +71,23 @@ def main(path):
             if i:
                 current_class = row['Class']
                 i = False
-                os.makedirs('../../data/interim/Vertebrates/'+current_class)
-                os.makedirs('../../data/processed/Vertebrates/'+current_class)
+                os.makedirs('../../data/interim/spectrograms/'+current_class)
+                os.makedirs('../../data/processed/spectrograms/'+current_class)
                 print("Creating spectrograms of class "+current_class+".")
             
             # *For subsequent rows
             if current_class != row['Class']:
                 current_class = row['Class']
-                os.mkdir('../../data/interim/Vertebrates/'+current_class)
-                os.mkdir('../../data/processed/Vertebrates/'+current_class)
+                os.mkdir('../../data/interim/spectrograms/'+current_class)
+                os.mkdir('../../data/processed/spectrograms/'+current_class)
                 print("Creating spectrograms of class "+current_class+".")
                 num = 1
             
             # *Defining the parameters
             sig = row['Signal']
             id = row['ID']
-            interim_out_path = '../../data/interim/Vertebrates/'+current_class+'/'+id+'.png'
-            processed_out_path = '../../data/processed/Vertebrates/'+current_class+'/'+id+'.png'
+            interim_out_path = '../../data/interim/spectrograms/'+current_class+'/'+id+'.png'
+            processed_out_path = '../../data/processed/spectrograms/'+current_class+'/'+id+'.png'
             param = [sig, interim_out_path, processed_out_path]
 
             # *Calling the function
