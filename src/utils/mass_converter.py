@@ -5,6 +5,7 @@ import numpy as np
 import os
 import glob
 
+
 class massConvertToSpec():
     def __init__(self, path_to_dataset):
         self.path_to_dataset = path_to_dataset
@@ -13,11 +14,7 @@ class massConvertToSpec():
                             'FamilyToGenus(Cyprinidae)', 'Fungi', 'Influenza', 'Insects', 'KingdomToPhylum(Animalia)', 'Mammalia', 'Mammals', 'NewVertSequences', 'OrderToFamily(Cypriniformes)', 'PhylumToSubphylum(Chordata)', 
                             'Plants', 'Primates', 'Protists', 'SubclassToSuperorder(Neopterygii)', 'SubfamilyToGenus(Acheilognathinae)', 'SubphylumToClass(Vertebrata)', 'SuperorderToOrder(Ostariophysi)', 'Vertebrates']
 
-    def generate_dict(self):
-        class_names = ['Amphibians', 'Birds', 'Fish', 'Mammals', 'Reptiles']
-
-        
-        class_name = class_names[0]
+    def generate_dict(self, class_name):
 
         self.dataDict[class_name] = {}
 
@@ -36,14 +33,20 @@ class massConvertToSpec():
             self.dataDict[class_name][f_name]['Signal'] = X
             self.dataDict[class_name][f_name]['Spec'] = spec
 
-            print('Added ', f_name)
+            print('Added ', class_name, ": ", f_name)
 
 
     def save_to_numpy(self, path):
-        np.save(path, self.path_to_dataset)
+        np.save(path, self.dataDict)
+        print("Saved to ", path)
 
 if __name__ == "__main__":
     path = os.path.join('data/external/ML-DSP', 'Vertebrates')
+    
+    class_names = ['Amphibians', 'Birds', 'Fish', 'Mammals', 'Reptiles']
+
+    class_name = class_names[4]
+
     convert = massConvertToSpec(path_to_dataset=path)
-    convert.generate_dict()
-    convert.save_to_numpy(path="data/processed/Amphibians.npy")
+    convert.generate_dict(class_name=class_name)
+    convert.save_to_numpy(path="data/processed/Vertebrates/{}.npy".format(class_name))
