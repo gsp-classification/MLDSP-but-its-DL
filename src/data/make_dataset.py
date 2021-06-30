@@ -25,7 +25,7 @@ for vert_class in classes:
             seq = f.read()
         
         # *Sectioning the first 5000 nucleotides of the genome because my laptop is dying
-        geneseq = seq[13:5013]
+        geneseq = seq[13:1013]
 
         # *Spliting the path for the ID
         id = genome.split('/')[-1][:-4]
@@ -43,5 +43,5 @@ with open('../../data/interim/dataset.csv', 'w') as csvfile:
     writer.writerows(dataset)
 
 print("\n---------------------------------------------------------------------------------------------------------------")
-print("Dataset with Class, ID and gene sequences (first 5000 bases) created at gene-to-signal/data/interim/dataset.csv.\n")
+print("Dataset with Class, ID and gene sequences (first 1000 bases) created at gene-to-signal/data/interim/dataset.csv.\n")
 # ?Can this be done better? Is a csv necessary or can it just be a folder full of the dataset? 
