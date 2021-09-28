@@ -11,7 +11,7 @@ genes = Fasta('data/external/VFDB_setA_nt.fasta')
 # *Initialising the dataset list
 VFDBset = []
 
-print("\nBeginning extraction from genomic sequences in .txt format present in gene-to-signal/data/external/VFDB_setA_nt.fasta")
+print("\nBeginning extraction from genomic sequences in .fasta format present in gene-to-signal/data/external/VFDB_setA_nt.fasta")
 print("---------------------------------------------------------------------------------------------------------------\n")
 # *Iterating over the class folders
 for gene in genes.keys():
