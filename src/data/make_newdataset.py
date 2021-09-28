@@ -1,5 +1,4 @@
 
-# !Script to make a csv dataset to feed into the spectrogram from the ML-DSP dataset from DOI: <https://doi.org/10.1186/s12864-019-5571-y>
 # *Import packages
 import glob
 import os
