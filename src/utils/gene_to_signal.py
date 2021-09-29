@@ -7,7 +7,11 @@ import sys
 
 # !Specify the type of representation you want the DNA sequence to be converted into. Choose from: ['Voss', 'Tetrahedron', 'Integer', 'Real', 'Complex']. Default = 'Voss'
 # *This is the only variable that needs to be set in this script.
-metric = 'Voss'
+<<<<<<< HEAD
+metric = 'Real'
+=======
+metric = 'Integer'
+>>>>>>> gsp/main
 
 # !Functions
 # *Function to make a list out of the gene sequence. Outputs a list from a string input.

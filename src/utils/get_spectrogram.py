@@ -10,15 +10,13 @@ import pandas as pd
 from scipy import signal as signal
 import matplotlib.pyplot as plt
 from PIL import Image
-#import multiprocessing
-#import concurrent.futures
 
 # *Function to change the input from the csv dataset into numpy array. Takes input string and outputs nparray.
 def str_to_nparray(sig):
     sig1 = sig[:-1]
     sig2 = sig1[1:]
     sig3 = sig2.split(', ')
-    sig4 = list(map(int, sig3))
+    sig4 = list(map(float, sig3))
     finsig = np.array(sig4)
     return finsig
 
@@ -60,13 +58,12 @@ def main(path):
             shutil.rmtree('../../data/interim/spectrograms')
         if os.path.isdir('../../data/processed/spectrograms'):
             shutil.rmtree('../../data/processed/spectrograms')
-        #pool = multiprocessing.Pool()
-        #params =[]
+        param = []
         i = True
         num = 1
         # *Looping over each genome in DNASignal.csv.
         for row in rows:
-
+            
             # *For the first row
             if i:
                 current_class = row['Class']
@@ -88,20 +85,15 @@ def main(path):
             id = row['ID']
             interim_out_path = '../../data/interim/spectrograms/'+current_class+'/'+id+'.png'
             processed_out_path = '../../data/processed/spectrograms/'+current_class+'/'+id+'.png'
+
             param = [sig, interim_out_path, processed_out_path]
+
 
             # *Calling the function
             final_spectrogram(param)
-            
-            #params.append(param)
-            print('Number of IDs converted:', num)
-            num = num + 1
 
-        #pool.starmap(final_spectrogram, params)
-            #final_spectrogram(params)
-        #params = iter(params)
-        #with concurrent.futures.ProcessPoolExecutor(max_workers=3) as executor:
-        #    executor.map(final_spectrogram, params)
+            print('Number of IDs converted in',current_class,':', num)
+            num = num + 1
 
 if __name__ == "__main__":
     main(path = '../../data/processed/DNASignal.csv')
