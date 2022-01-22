@@ -1,0 +1,59 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Berbenetz et~al.(2010-09-02)Berbenetz, Nislow, and
+  Brown]{Berbenetz2010-09-02-hm}
+N~M Berbenetz, C~Nislow, and G~W Brown.
+\newblock Diversity of eukaryotic {DNA} replication origins revealed by
+  genome-wide analysis of chromatin structure.
+\newblock \emph{PLoS Genet}, 2010;6(9):e1001092:\penalty0 1001092, 2010-09-02.
+
+\bibitem[Chou and Shen(1038/nprot. 2007)]{Chou1038nprot2007-xf}
+K~C Chou and H~B Shen.
+\newblock {Cell-PLoc}: a package of web servers for predicting subcellular
+  localization of proteins in various organisms.
+\newblock \emph{Nat Protoc}, 2008;3(2):153-162:\penalty0 494, 1038/nprot. 2007.
+
+\bibitem[Guo et~al.(1093/bioinformatics/btu083)Guo, Deng, and
+  Xu]{Guo1093bioinformaticsbtu083-ss}
+S~H Guo, E~Z Deng, and L~Q Xu.
+\newblock {iNuc-PseKNC}: a sequence-based predictor for predicting nucleosome
+  positioning in genomes with pseudo k-tuple nucleotide composition.
+\newblock \emph{Bioinformatics}, 2014;30(11):1522-1529,
+  1093/bioinformatics/btu083.
+
+\bibitem[Harris(1978)]{1455106}
+F.J. Harris.
+\newblock On the use of windows for harmonic analysis with the discrete fourier
+  transform.
+\newblock \emph{Proceedings of the IEEE}, 66\penalty0 (1):\penalty0 51--83,
+  1978.
+\newblock \doi{10.1109/PROC.1978.10837}.
+
+\bibitem[Huang et~al.(2018)Huang, Liu, van~der Maaten, and
+  Weinberger]{huang2018densely}
+Gao Huang, Zhuang Liu, Laurens van~der Maaten, and Kilian~Q. Weinberger.
+\newblock Densely connected convolutional networks, 2018.
+
+\bibitem[Richmond and Davey(1038/nature01595)]{Richmond1038nature01595-ni}
+T~J Richmond and C~A Davey.
+\newblock The structure of {DNA} in the nucleosome core.
+\newblock \emph{Nature}, 2003;423(6936):145-150, 1038/nature01595.
+
+\bibitem[Satchwell et~al.(1986)Satchwell, Drew, and Travers]{Satchwell1986-ku}
+S~C Satchwell, H~R Drew, and A~A Travers.
+\newblock Sequence periodicities in chicken nucleosome core {DNA}.
+\newblock \emph{J. Mol. Biol.}, 191\penalty0 (4):\penalty0 659--675, October
+  1986.
+
+\bibitem[Silverman and Linsker(1986)]{Silverman1986-by}
+B~D Silverman and R~Linsker.
+\newblock A measure of {DNA} periodicity.
+\newblock \emph{J. Theor. Biol.}, 118\penalty0 (3):\penalty0 295--300, February
+  1986.
+
+\end{thebibliography}
